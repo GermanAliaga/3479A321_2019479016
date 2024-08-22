@@ -146,8 +146,8 @@ class _MyHomePageState extends State<MyHomePage> {
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
       persistentFooterButtons: [
-        ElevatedButton(onPressed: _drecreaseCounter, child: Icon(Icons.ac_unit_outlined)),
-        ElevatedButton(onPressed: _restartCounter, child: Icon(Icons.headphones))
+        ElevatedButton(onPressed: _drecreaseCounter, child: Icon(Icons.remove)),
+        ElevatedButton(onPressed: _restartCounter, child: Icon(Icons.restart_alt))
       ],
     );
   }
