@@ -42,7 +42,6 @@ class MyHomePage extends StatefulWidget {
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
   // how it looks.
-
   // This class is the configuration for the state. It holds the values (in this
   // case the title) provided by the parent (in this case the App widget) and
   // used by the build method of the State. Fields in a Widget subclass are
@@ -68,8 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void _drecreaseCounter()
-  {
+  void _drecreaseCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
@@ -80,8 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void _restartCounter()
-  {
+  void _restartCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
@@ -136,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            Text("holas")
+            const Text("holas")
           ],
         ),
       ),
@@ -146,8 +143,10 @@ class _MyHomePageState extends State<MyHomePage> {
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
       persistentFooterButtons: [
-        ElevatedButton(onPressed: _drecreaseCounter, child: Icon(Icons.remove)),
-        ElevatedButton(onPressed: _restartCounter, child: Icon(Icons.restart_alt))
+        ElevatedButton(
+            onPressed: _drecreaseCounter, child: const Icon(Icons.remove)),
+        ElevatedButton(
+            onPressed: _restartCounter, child: const Icon(Icons.restart_alt))
       ],
     );
   }
