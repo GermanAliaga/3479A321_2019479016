@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Clicks Demo',
+      title: 'Clicks App',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
             seedColor: const Color.fromARGB(255, 48, 1, 255)),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Clicks Demo Home Page'),
+      home: const MyHomePage(title: 'Clicks Home Page'),
     );
   }
 }
@@ -137,8 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            const Text("holas")
+            )
           ],
         ),
       ),
