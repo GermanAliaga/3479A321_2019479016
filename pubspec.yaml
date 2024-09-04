@@ -72,7 +72,7 @@ flutter:
 
   # To add custom fonts to your application, add a fonts section here,
   fonts:
-    - family: Celtic
+    - family: Celtica
       fonts:
         - asset: fonts/Celtica-Bold.ttf
         - asset: fonts/Celtica-BoldOblique.ttf
