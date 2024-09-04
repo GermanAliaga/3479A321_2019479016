@@ -31,7 +31,9 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(
             seedColor: const Color.fromARGB(255, 1, 255, 26)),
+        brightness: Brightness.light,
         useMaterial3: true,
+        fontFamily: 'Celtic',
       ),
       home: const MyHomePage(title: 'Clicks Home Page'),
     );
