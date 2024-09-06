@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:logger/logger.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -13,6 +12,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String message1 = 'Juega';
+  String message2 = 'Cantidad de cliks';
 
   void _incrementCounter() {
     setState(() {
@@ -42,18 +43,28 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text(widget.title),
         ),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              SvgPicture.asset(svg, semanticsLabel: 'Joystick logo'),
-              const Text(
-                'Haz presionado el botón esta cantidad de veces:',
-              ),
-              Text(
-                '$_counter',
-                style: Theme.of(context).textTheme.headlineMedium,
-              )
-            ],
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  message1,
+                ),
+                SvgPicture.asset(
+                  svg,
+                  semanticsLabel: 'Joystick logo',
+                  width: 70,
+                ),
+                Text(
+                  message2,
+                ),
+                Text(
+                  '$_counter',
+                  style: Theme.of(context).textTheme.headlineMedium,
+                )
+              ],
+            ),
           ),
         ),
         floatingActionButton: FloatingActionButton(

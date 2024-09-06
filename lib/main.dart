@@ -1,6 +1,5 @@
 import 'package:aplicacion1_ejemplo/pages/myhomepage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:logger/logger.dart';
 
 void main() {
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
             seedColor: const Color.fromARGB(255, 1, 255, 26)),
         brightness: Brightness.light,
         useMaterial3: true,
-        fontFamily: 'Celtica',
+        fontFamily: 'Caramel',
       ),
       home: const MyHomePage(title: 'Clicks Home Page'),
     );

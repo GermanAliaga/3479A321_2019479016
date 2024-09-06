@@ -28,6 +28,9 @@ flutter:
 
   assets:
      - assets/icons/211668_controller_b_game_icon.svg
+     - assets/icons/6843054_achievement_challenge_competition_success_victory_icon.svg
+     - assets/icons/7511711_game_over_sign_video_icon.svg
+     - assets/icons/9666700_restart_icon.svg
 
   fonts:
     - family: Celtica
@@ -36,5 +39,10 @@ flutter:
         - asset: fonts/Celtica-BoldOblique.ttf
         - asset: fonts/Celtica-Book.ttf
         - asset: fonts/Celtica-BookOblique.ttf
+          style: normal
+
+    - family: Caramel
+      fonts:
+        - asset: fonts/Super-Caramel.ttf
           style: normal
 
