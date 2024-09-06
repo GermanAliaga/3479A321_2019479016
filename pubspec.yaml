@@ -15,6 +15,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter_svg: ^2.0.10+1
   logger: ^2.4.0
+  auto_size_text: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -27,10 +28,10 @@ flutter:
   uses-material-design: true
 
   assets:
-     - assets/icons/211668_controller_b_game_icon.svg
-     - assets/icons/6843054_achievement_challenge_competition_success_victory_icon.svg
-     - assets/icons/7511711_game_over_sign_video_icon.svg
-     - assets/icons/9666700_restart_icon.svg
+     - assets/icons/controller_game_icon.svg
+     - assets/icons/victory_icon.svg
+     - assets/icons/game_over_icon.svg
+     - assets/icons/restart_icon.svg
 
   fonts:
     - family: Celtica

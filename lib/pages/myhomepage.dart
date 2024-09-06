@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -12,6 +13,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String svg = "assets/icons/controller_game_icon.svg";
   String message1 = 'Juega';
   String message2 = 'Cantidad de cliks';
 
@@ -30,12 +32,24 @@ class _MyHomePageState extends State<MyHomePage> {
   void _restartCounter() {
     setState(() {
       _counter = 0;
+      message1 = 'Vuelve a jugar';
+      svg = "assets/icons/restart_icon.svg";
     });
+  }
+
+  void _messageChange() {
+    if (_counter < 0) {
+      message1 = 'Derrota';
+      svg = "assets/icons/game_over_icon.svg";
+    } else if (_counter > 10) {
+      message1 = 'Victoria';
+      svg = "assets/icons/victory_icon.svg";
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    String svg = "assets/icons/211668_controller_b_game_icon.svg";
+    _messageChange();
 
     return Scaffold(
         appBar: AppBar(
@@ -43,17 +57,22 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text(widget.title),
         ),
         body: Center(
+            child: Card(
+          elevation: 10,
+          color: const Color.fromARGB(255, 244, 248, 238),
           child: Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(16.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(
+                AutoSizeText(
                   message1,
+                  style: const TextStyle(fontSize: 50),
+                  maxLines: 2,
                 ),
                 SvgPicture.asset(
                   svg,
-                  semanticsLabel: 'Joystick logo',
+                  semanticsLabel: 'Game logo',
                   width: 70,
                 ),
                 Text(
@@ -66,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
           ),
-        ),
+        )),
         floatingActionButton: FloatingActionButton(
           onPressed: _restartCounter,
           tooltip: 'Increment',
