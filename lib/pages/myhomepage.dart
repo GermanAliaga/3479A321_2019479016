@@ -13,6 +13,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  double _fontSize = 50;
   String svg = "assets/icons/controller_game_icon.svg";
   String message1 = 'Juega';
   String message2 = 'Cantidad de cliks';
@@ -23,7 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void _drecreaseCounter() {
+  void _decreaseCounter() {
     setState(() {
       _counter--;
     });
@@ -33,6 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _counter = 0;
       message1 = 'Vuelve a jugar';
+      _fontSize = 30;
       svg = "assets/icons/restart_icon.svg";
     });
   }
@@ -40,9 +42,11 @@ class _MyHomePageState extends State<MyHomePage> {
   void _messageChange() {
     if (_counter < 0) {
       message1 = 'Derrota';
+      _fontSize = 50;
       svg = "assets/icons/game_over_icon.svg";
     } else if (_counter > 10) {
       message1 = 'Victoria';
+      _fontSize = 50;
       svg = "assets/icons/victory_icon.svg";
     }
   }
@@ -58,22 +62,22 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: Center(
             child: Card(
-          elevation: 10,
-          color: const Color.fromARGB(255, 244, 248, 238),
+          elevation: 20,
+          color: const Color.fromARGB(255, 237, 243, 233),
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(10.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                AutoSizeText(
-                  message1,
-                  style: const TextStyle(fontSize: 50),
-                  maxLines: 2,
-                ),
                 SvgPicture.asset(
                   svg,
                   semanticsLabel: 'Game logo',
                   width: 70,
+                ),
+                AutoSizeText(
+                  message1,
+                  style: TextStyle(fontSize: _fontSize),
+                  maxLines: 2,
                 ),
                 Text(
                   message2,
@@ -81,21 +85,35 @@ class _MyHomePageState extends State<MyHomePage> {
                 Text(
                   '$_counter',
                   style: Theme.of(context).textTheme.headlineMedium,
-                )
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                        onPressed: _decreaseCounter,
+                        child: const Icon(Icons.remove)),
+                    ElevatedButton(
+                        onPressed: _incrementCounter,
+                        child: const Icon(Icons.add)),
+                    ElevatedButton(
+                        onPressed: _restartCounter,
+                        child: const Icon(Icons.restart_alt)),
+                  ],
+                ),
               ],
             ),
           ),
-        )),
-        floatingActionButton: FloatingActionButton(
-          onPressed: _restartCounter,
-          tooltip: 'Increment',
-          child: const Icon(Icons.restart_alt),
-        ),
-        persistentFooterButtons: [
-          ElevatedButton(
-              onPressed: _drecreaseCounter, child: const Icon(Icons.remove)),
-          ElevatedButton(
-              onPressed: _incrementCounter, child: const Icon(Icons.add))
-        ]);
+        )));
+    //floatingActionButton: FloatingActionButton(
+    //  onPressed: _restartCounter,
+    //  tooltip: 'Increment',
+    //  child: const Icon(Icons.restart_alt),
+    //),
+    //persistentFooterButtons: [
+    //ElevatedButton(
+    //  onPressed: _decreaseCounter, child: const Icon(Icons.remove)),
+    //ElevatedButton(
+    //  onPressed: _incrementCounter, child: const Icon(Icons.add))
+    //]);
   }
 }
