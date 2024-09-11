@@ -13,9 +13,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  double _fontSize = 50;
   String svg = "assets/icons/controller_game_icon.svg";
-  String message1 = 'Juega';
+  String message1 = 'Jugar';
   String message2 = 'Cantidad de cliks';
 
   void _incrementCounter() {
@@ -33,20 +32,17 @@ class _MyHomePageState extends State<MyHomePage> {
   void _restartCounter() {
     setState(() {
       _counter = 0;
-      message1 = 'Vuelve a jugar';
-      _fontSize = 30;
+      message1 = 'Jugar';
       svg = "assets/icons/restart_icon.svg";
     });
   }
 
   void _messageChange() {
-    if (_counter < 0) {
+    if (_counter == 5) {
       message1 = 'Derrota';
-      _fontSize = 50;
       svg = "assets/icons/game_over_icon.svg";
-    } else if (_counter > 10) {
+    } else if (_counter == 10) {
       message1 = 'Victoria';
-      _fontSize = 50;
       svg = "assets/icons/victory_icon.svg";
     }
   }
@@ -63,44 +59,48 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Center(
             child: Card(
           elevation: 20,
-          color: const Color.fromARGB(255, 237, 243, 233),
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                SvgPicture.asset(
-                  svg,
-                  semanticsLabel: 'Game logo',
-                  width: 70,
-                ),
-                AutoSizeText(
-                  message1,
-                  style: TextStyle(fontSize: _fontSize),
-                  maxLines: 2,
-                ),
-                Text(
-                  message2,
-                ),
-                Text(
-                  '$_counter',
-                  style: Theme.of(context).textTheme.headlineMedium,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                        onPressed: _decreaseCounter,
-                        child: const Icon(Icons.remove)),
-                    ElevatedButton(
-                        onPressed: _incrementCounter,
-                        child: const Icon(Icons.add)),
-                    ElevatedButton(
-                        onPressed: _restartCounter,
-                        child: const Icon(Icons.restart_alt)),
-                  ],
-                ),
-              ],
+          color: const Color.fromRGBO(237, 243, 233, 1),
+          child: SizedBox(
+            width: 300,
+            height: 300,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  SvgPicture.asset(
+                    svg,
+                    semanticsLabel: 'Game logo',
+                    width: 70,
+                  ),
+                  AutoSizeText(
+                    message1,
+                    style: TextStyle(fontSize: 50),
+                    maxLines: 2,
+                  ),
+                  Text(
+                    message2,
+                  ),
+                  Text(
+                    '$_counter',
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                          onPressed: _decreaseCounter,
+                          child: const Icon(Icons.remove)),
+                      ElevatedButton(
+                          onPressed: _incrementCounter,
+                          child: const Icon(Icons.add)),
+                      ElevatedButton(
+                          onPressed: _restartCounter,
+                          child: const Icon(Icons.restart_alt)),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         )));
