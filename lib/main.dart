@@ -1,3 +1,4 @@
+import 'package:aplicacion1_ejemplo/pages/detail.dart';
 import 'package:aplicacion1_ejemplo/pages/myhomepage.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'Caramel',
       ),
-      home: const MyHomePage(title: 'Clicks Home Page'),
+      //home: const MyHomePage(title: 'Clicks Home Page'),
+      home: const Detail(),
     );
   }
 }
