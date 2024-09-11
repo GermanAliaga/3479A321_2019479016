@@ -1,11 +1,10 @@
-import 'package:aplicacion1_ejemplo/pages/about.dart';
 import 'package:aplicacion1_ejemplo/pages/myhomepage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
-class Detail extends StatelessWidget {
-  const Detail(
+class About extends StatelessWidget {
+  const About(
       {super.key,
       this.color = const Color.fromARGB(255, 231, 241, 223),
       this.child,
@@ -33,11 +32,7 @@ class Detail extends StatelessWidget {
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  SvgPicture.asset(
-                    "assets/icons/controller_game_icon.svg",
-                    semanticsLabel: 'Game logo',
-                    width: 70,
-                  ),
+                  const Text('Mi nombre es Germán'),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -45,21 +40,11 @@ class Detail extends StatelessWidget {
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          child: const Text('Volver')),
-                      ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        About(title: 'Página 2')));
-                          },
-                          child: const Text('Siguiente')),
+                          child: const Text('Volver'))
                     ],
                   ),
                 ])),
       )),
     );
-    //floatingActionButton: FloatingActionButton(onPressed: , child: Icon(Icons.icecream));
   }
 }

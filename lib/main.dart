@@ -24,8 +24,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'Caramel',
       ),
-      //home: const MyHomePage(title: 'Clicks Home Page'),
-      home: const Detail(),
+      home: const MyHomePage(title: 'Clicks Home Page'),
+      //home: const Detail(),
     );
   }
 }

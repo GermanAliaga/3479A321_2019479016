@@ -1,3 +1,4 @@
+import 'package:aplicacion1_ejemplo/pages/detail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -103,17 +104,23 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ),
-        )));
-    //floatingActionButton: FloatingActionButton(
-    //  onPressed: _restartCounter,
-    //  tooltip: 'Increment',
-    //  child: const Icon(Icons.restart_alt),
-    //),
-    //persistentFooterButtons: [
-    //ElevatedButton(
-    //  onPressed: _decreaseCounter, child: const Icon(Icons.remove)),
-    //ElevatedButton(
-    //  onPressed: _incrementCounter, child: const Icon(Icons.add))
-    //]);
+        )),
+        //floatingActionButton: FloatingActionButton(
+        //  onPressed: _restartCounter,
+        //  tooltip: 'Increment',
+        //  child: const Icon(Icons.restart_alt),
+        //),
+        persistentFooterButtons: [
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Detail(title: 'Página 1')));
+              },
+              child: const Icon(Icons.arrow_forward)),
+          //ElevatedButton(
+          //  onPressed: _incrementCounter, child: const Icon(Icons.add))
+        ]);
   }
 }
