@@ -1,8 +1,6 @@
 import 'package:aplicacion1_ejemplo/pages/about.dart';
-import 'package:aplicacion1_ejemplo/pages/myhomepage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 
 class Detail extends StatelessWidget {
   const Detail(

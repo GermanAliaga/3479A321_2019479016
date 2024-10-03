@@ -1,4 +1,3 @@
-import 'package:aplicacion1_ejemplo/pages/detail.dart';
 import 'package:aplicacion1_ejemplo/pages/myhomepage.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
